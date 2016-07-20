@@ -9,7 +9,11 @@
   </head>
   <body ng-app="app">
     <div class="container">
-      <p>{{ 5 + 5 }}</p>
+      <form ng-controller="GifController" ng-click="addGif(gif)">
+        <p class="control">
+          <input type="text" placeholder="Gif URL" class="input" ng-model="gif">
+        </p>
+      </form>
     </div>
     <script src="js/bundle.js"></script>
   </body>
