@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "angular": "1.5.7",
-    "bulma": "0.1.0"
+    "bulma": "0.1.0",
+    "lodash": "4.13.1"
   }
 }

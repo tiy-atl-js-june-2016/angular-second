@@ -23,9 +23,10 @@
       <hr>
 
       <ul>
-        <li ng-repeat="gif in gifs">
+        <li ng-repeat="gif in gifs" data-id="{{ gif._id }}">
           <h3>{{ gif.name }}</h3>
           <img ng-src="{{ gif.url }}" alt="{{ gif.name }}">
+          <button ng-click="deleteMe(gif._id)" class="button">Delete</button>
         </li>
       </ul>
     </div>
