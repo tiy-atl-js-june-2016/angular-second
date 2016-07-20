@@ -3,4 +3,8 @@
 .container {
   width: 400px;
   margin: 25px auto;
+
+  img {
+    max-width: 200px;
+  }
 }
