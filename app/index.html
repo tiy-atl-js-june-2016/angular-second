@@ -11,24 +11,28 @@
     <div class="container" ng-controller="GifController">
       <form ng-submit="addGif(gif)">
         <p class="control">
-          <input type="text" placeholder="Gif Name" class="input" ng-model="gif.name">
+          <input type="text" placeholder="Gif Name" class="input" ng-model="gif.name" ng-keyup="validateName(gif.name)">
+          <span>{{ error.name }}</span>
         </p>
         <p class="control">
-          <input type="text" placeholder="Gif URL" class="input" ng-model="gif.url">
+          <input type="text" placeholder="Gif URL" class="input" ng-model="gif.url" ng-keyup="validateUrl(gif.url)">
+          <span>{{ error.url }}</span>
         </p>
         <p class="control">
           <button class="button">Add</button>
         </p>
       </form>
+
       <hr>
 
       <ul>
-        <li ng-repeat="gif in gifs" data-id="{{ gif._id }}">
-          <h3>{{ gif.name }}</h3>
-          <img ng-src="{{ gif.url }}" alt="{{ gif.name }}">
-          <button ng-click="deleteMe(gif._id)" class="button">Delete</button>
+        <li ng-repeat="x in gifs">
+          <h3>{{ x.name }}</h3>
+          <img ng-src="{{ x.url }}" alt="{{ x.name }}">
+          <button ng-click="deleteMe(x._id)" class="button">Delete</button>
         </li>
       </ul>
+
     </div>
     <script src="js/bundle.js"></script>
   </body>
